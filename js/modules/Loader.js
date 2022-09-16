@@ -1,3 +1,4 @@
+let githubRawURI='https://raw.githubusercontent.com/DevFrogora/portfolio/main';
 export const LoadFileToText = async (filepath) => {
     const csstext = await fetch(filepath).then((data) => data.text());
     return csstext;
