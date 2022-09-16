@@ -46,7 +46,7 @@ class Navigation extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // this.shadowRoot.querySelector('span').innerHTML = this.getAttribute('name');
-        this.shadowRoot.querySelector('img').
+        this.shadowRoot.querySelector('.navigation-element .navigation-logo .logo').
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
         this.shadowRoot.querySelector('slot').
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));

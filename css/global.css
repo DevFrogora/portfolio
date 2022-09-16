@@ -1,5 +1,6 @@
 html:root {
-
+    font-size: 10px;
+    font-family: Verdana;
     /* Theme */
     --theme-light-bg-color: #f0f0f0;
     --theme-light-text-color: #123;
@@ -9,7 +10,6 @@ html:root {
 
     --theme-dark-dropdown-hover-bg-color :#000000;
     --theme-light-dropdown-hover-bg-color :#d3d2d2;
-
 }
 
 :root {
@@ -23,8 +23,7 @@ html:root {
 }
 
 body {
-    font-size: 10px;
-    font-family: Verdana;
+    /* font-family: Verdana; */
     /* background-color: var(--theme-light-bg-color); */
     /* color: var(--theme-light-text-color); */
 }
