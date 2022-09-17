@@ -1,17 +1,16 @@
+@import  url("./theme/dark.css");
+@import url("./theme/light.css");
+
 html:root {
     font-size: 16px;
-
     /* Theme */
-    --theme-light-bg-color: #fff;
-    --theme-light-text-color: #123;
+    --btn-color: #f0f0f0;
 
-    --theme-dark-bg-color: #1b1b1b;
-    --theme-dark-text-color: #fff;
-    --btn-color: #f0f0f0; 
-
-
-    --font-fallback: BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    --font-fallback: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: var(--font-fallback);
+
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 
@@ -21,80 +20,3 @@ html:root {
 }
 
 
-@media( prefers-color-scheme: dark )
-{
-    html:root{
-        color: var(--theme-dark-text-color);
-        background-color: var(--theme-dark-bg-color);
-
-        /* for shadow element */
-        --text-color : var(--theme-dark-text-color);
-        --background-color : var(--theme-dark-bg-color);
-        --invert-filter: invert(1);
-
-        --theme-dropdown-bg-color : var(--theme-dark-bg-color);
-        --theme-dropdown-hover-bg-color : #696969;
-
-        --background-secondary : #343434;
-        /* --background */
-
-        --border-primary : #858585;
-
-
-    }
-}
-
-@media( prefers-color-scheme: light )
-{
-    html:root{
-        color: var(--theme-light-text-color);
-        background-color: var(--theme-light-bg-color);
-        
-        /* for shadow element */
-        --text-color : var(--theme-light-text-color);
-        --background-color : var(--theme-light-bg-color);
-        --invert-filter: invert(0);
-
-        --theme-dropdown-bg-color : #F9F9FB;
-        --theme-dropdown-hover-bg-color : #ffffff;
-        
-        --background-secondary :#f9f9fb;
-
-        --border-primary : #cdcdcd;
-
-    }
-}
-
-html[data-theme='dark']{
-    color: var(--theme-dark-text-color);
-    background-color: var(--theme-dark-bg-color);
-    
-    /* for shadow element */
-    --text-color : var(--theme-dark-text-color);
-    --background-color : var(--theme-dark-bg-color);
-    --invert-filter: invert(1);
-
-    --theme-dropdown-bg-color : var(--theme-dark-bg-color);
-    --theme-dropdown-hover-bg-color : #696969;
-
-    --background-secondary : #343434;
-
-    --border-primary : #858585;
-}
-
-html[data-theme='light']{
-    color: var(--theme-light-text-color);
-    background-color: var(--theme-light-bg-color);
-    
-    /* for shadow element */
-    --text-color : var(--theme-light-text-color);
-    --background-color : var(--theme-light-bg-color);
-    --invert-filter: invert(0);
-
-    --theme-dropdown-bg-color : #F9F9FB;
-    --theme-dropdown-hover-bg-color : #ffffff;
-
-    --background-secondary :#f9f9fb;
-
-    --border-primary : #cdcdcd;
-}

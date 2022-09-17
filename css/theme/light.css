@@ -1,0 +1,52 @@
+@media(prefers-color-scheme: light) {
+    html:root {
+
+        --background-primary: #fff;
+        --background-secondary: #f9f9fb;
+
+        --border-primary: #cdcdcd;
+
+        --text-primary: #1b1b1b;
+        --text-secondary: #4e4e4e;
+
+        color: var(--text-primary);
+        background-color: var(--background-primary);
+
+        /* for shadow element */
+        --text-color: var(--text-primary);
+        --background-color: var(--background-primary);
+        --invert-filter: invert(0);
+
+        --theme-dropdown-bg-color: #F9F9FB;
+        --theme-dropdown-hover-bg-color: #ffffff;
+
+    }
+}
+
+
+
+
+
+
+
+
+html[data-theme='light'] {
+    --background-primary: #fff;
+    --background-secondary: #f9f9fb;
+
+    --border-primary: #cdcdcd;
+
+    --text-primary: #1b1b1b;
+    --text-secondary: #4e4e4e;
+
+    color: var(--text-primary);
+    background-color: var(--background-primary);
+
+    /* for shadow element */
+    --text-color: var(--text-primary);
+    --background-color: var(--background-primary);
+    --invert-filter: invert(0);
+
+    --theme-dropdown-bg-color: #F9F9FB;
+    --theme-dropdown-hover-bg-color: #ffffff;
+}
