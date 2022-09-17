@@ -20,4 +20,8 @@ html[data-theme='dark'] {
 
     --theme-dropdown-bg-color: var(--background-primary);
     --theme-dropdown-hover-bg-color: #696969;
+
+
+    color-scheme: dark;
+
 }

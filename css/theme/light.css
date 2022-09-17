@@ -21,4 +21,6 @@ html[data-theme='light'] {
 
     --theme-dropdown-bg-color: #F9F9FB;
     --theme-dropdown-hover-bg-color: #ffffff;
+
+    color-scheme: light;
 }

@@ -20,6 +20,8 @@
         --theme-dropdown-bg-color: #F9F9FB;
         --theme-dropdown-hover-bg-color: #ffffff;
 
+        color-scheme: light;
+
     }
 }
 
@@ -44,5 +46,7 @@
 
         --theme-dropdown-bg-color: var(--background-primary);
         --theme-dropdown-hover-bg-color: #696969;
+
+        color-scheme: dark;
     }
 }
