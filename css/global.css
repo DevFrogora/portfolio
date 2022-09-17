@@ -1,6 +1,6 @@
 html:root {
-    font-size: 10px;
-    font-family: Verdana;
+    font-size: 16px;
+
     /* Theme */
     --theme-light-bg-color: #fff;
     --theme-light-text-color: #123;
@@ -9,42 +9,37 @@ html:root {
     --theme-dark-text-color: #fff;
     --btn-color: #f0f0f0; 
 
-    --theme-dark-dropdown-hover-bg-color :#000000;
-    --theme-light-dropdown-hover-bg-color :#d3d2d2;
 
     --font-fallback: BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
     font-family: var(--font-fallback);
 }
 
-:root {
-    background-color: var(--theme-light-bg-color);
-    color: var(--theme-light-text-color);
-}
 
 * {
     padding: 0;
     margin: 0;
 }
 
-body {
-    /* font-family: Verdana; */
-    /* background-color: var(--theme-light-bg-color); */
-    /* color: var(--theme-light-text-color); */
-}
 
 @media( prefers-color-scheme: dark )
 {
     html:root{
         color: var(--theme-dark-text-color);
         background-color: var(--theme-dark-bg-color);
-        
+
         /* for shadow element */
         --text-color : var(--theme-dark-text-color);
         --background-color : var(--theme-dark-bg-color);
         --invert-filter: invert(1);
 
         --theme-dropdown-bg-color : var(--theme-dark-bg-color);
-        --theme-dropdown-hover-bg-color : var(--theme-dark-dropdown-hover-bg-color);
+        --theme-dropdown-hover-bg-color : #696969;
+
+        --background-secondary : #343434;
+        /* --background */
+
+        --border-primary : #858585;
+
 
     }
 }
@@ -60,8 +55,12 @@ body {
         --background-color : var(--theme-light-bg-color);
         --invert-filter: invert(0);
 
-        --theme-dropdown-bg-color : var(--theme-light-bg-color);
-        --theme-dropdown-hover-bg-color : var(--theme-light-dropdown-hover-bg-color);
+        --theme-dropdown-bg-color : #F9F9FB;
+        --theme-dropdown-hover-bg-color : #ffffff;
+        
+        --background-secondary :#f9f9fb;
+
+        --border-primary : #cdcdcd;
 
     }
 }
@@ -76,7 +75,11 @@ html[data-theme='dark']{
     --invert-filter: invert(1);
 
     --theme-dropdown-bg-color : var(--theme-dark-bg-color);
-    --theme-dropdown-hover-bg-color : var(--theme-dark-dropdown-hover-bg-color);
+    --theme-dropdown-hover-bg-color : #696969;
+
+    --background-secondary : #343434;
+
+    --border-primary : #858585;
 }
 
 html[data-theme='light']{
@@ -88,6 +91,10 @@ html[data-theme='light']{
     --background-color : var(--theme-light-bg-color);
     --invert-filter: invert(0);
 
-    --theme-dropdown-bg-color : var(--theme-light-bg-color);
-    --theme-dropdown-hover-bg-color : var(--theme-light-dropdown-hover-bg-color);
+    --theme-dropdown-bg-color : #F9F9FB;
+    --theme-dropdown-hover-bg-color : #ffffff;
+
+    --background-secondary :#f9f9fb;
+
+    --border-primary : #cdcdcd;
 }
