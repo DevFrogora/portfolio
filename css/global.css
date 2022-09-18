@@ -4,14 +4,14 @@
 
 
 html:root {
-    font-size: 16px;
+    /* font-size: 16px; */
     /* Theme */
     --btn-color: #f0f0f0;
 
     --font-fallback: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: var(--font-fallback);
 
-    font-size: 1rem;
+    /* font-size: 1rem; */
     font-weight: 400;
 }
 

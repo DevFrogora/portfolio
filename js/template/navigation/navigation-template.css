@@ -18,17 +18,23 @@
 
 }
 
-.navigation-element .navigation-logo .logo {
+.navigation-element .navigation-logo .logo{
+    width:  100%;
+    height :4rem;
+}
+
+.navigation-element .navigation-logo .logo img{
 
     /* min-width: 20%;
     min-height: 100%; */
-    width : 9rem;
+    /* width : 9rem;
     height :3rem;
     background-image: url("../../../images/logos.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-
+    background-position: center; */
+    object-fit: contain;
+    height: inherit;
     /* filter: var(--invert-filter); */
     filter: var(--invert-filter);
 }

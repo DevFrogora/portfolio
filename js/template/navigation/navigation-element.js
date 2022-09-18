@@ -46,8 +46,12 @@ class Navigation extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // this.shadowRoot.querySelector('span').innerHTML = this.getAttribute('name');
-        this.shadowRoot.querySelector('.navigation-element .navigation-logo .logo').
-            addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
+        this.shadowRoot.querySelector('.navigation-element .navigation-logo .logo img').
+            addEventListener('click', (e) => { 
+                // console.log(e); 
+                this.OnSlotItemClicked(e.target); 
+            });
+
         this.shadowRoot.querySelector('slot').
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
 
@@ -96,13 +100,13 @@ class Navigation extends HTMLElement {
         document.addEventListener("click", (event) => {
             // this.shadowRoot.querySelector(".navigation-element .theme-container button .dropdown-container .dropdown .option").contains();
 
-                let isClickInside = button.querySelector(".dropdown div").contains(event.target);
+            let isClickInside = button.querySelector(".dropdown div").contains(event.target);
 
-                if (!isClickInside) {
-                    button.querySelector(".dropdown div").style.display = "none";
-                    toggleTheme = true;
-                }
-          });
+            if (!isClickInside) {
+                button.querySelector(".dropdown div").style.display = "none";
+                toggleTheme = true;
+            }
+        });
 
 
     }

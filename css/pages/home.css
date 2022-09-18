@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 2rem;;
     align-items: flex-start;
+    gap: 1rem;
 }
 
 .home-container h1{
@@ -16,6 +17,13 @@
 }
 
 .home-container p{
+    font-size: 1.60rem;
+    font-weight: 100;
+}
+
+.home-container button{
+    margin: 1.5rem 0;
+    padding: 0 1rem;
     font-size: 1.60rem;
     font-weight: 100;
 }

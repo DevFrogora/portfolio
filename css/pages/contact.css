@@ -1,0 +1,27 @@
+.contact-container{
+    padding-top: 2rem ;
+    padding-left: 2rem;
+}
+
+form{
+
+    display: flex;
+    flex-direction: column;
+    /* padding: 2rem;; */
+    /* align-items: flex-start; */
+    /* gap: 1rem; */
+    /* padding: 2rem; */
+    width :50%;
+    /* justify-content: center; */
+    margin : 1rem auto;
+    gap : 0.7rem;
+}
+
+form .item{
+    padding: 0.7rem;
+}
+
+form .item option{
+    /* padding: 0.7rem; */
+    font-size: 1.5rem ;
+}

@@ -1,0 +1,13 @@
+.experience-container{
+    padding-top: 2rem ;
+    padding-left: 2rem;
+}
+
+.empty-expericene{
+    display: flex;
+    flex-direction: row;
+    /* padding: 2rem;; */
+    /* align-items: flex-start; */
+    gap: 1rem;
+    /* padding: 2rem; */
+}
