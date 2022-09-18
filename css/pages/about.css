@@ -1,0 +1,25 @@
+.about-container{
+    padding-top: 2rem ;
+    padding-left: 2rem;
+}
+
+table,tr,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+}
+
+.about-container table .first-row-container .col1{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.about-container table .first-row-container .col2{
+
+    display: flex;
+    flex-direction: column;
+}
