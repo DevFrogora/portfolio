@@ -4,6 +4,7 @@ import { LoadFileToText } from "../../modules/Loader.js";
 let navTemplate = await LoadFileToText("/js/template/navigation/navigation-template.html");
 const template = document.createElement('template');
 template.innerHTML = navTemplate;
+// template.innerHTML.interpolate(navTemplate);
 
 const route = (event) => {
     event = event || window.event;
