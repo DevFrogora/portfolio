@@ -1,9 +1,32 @@
-.about-container{
-    padding-top: 2rem ;
+.about-container {
+    padding-top: 2rem;
     padding-left: 2rem;
 }
 
-table,tr,td {
+.about-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: flex-start;
+    margin : 1rem auto;
+}
+
+.about-container .formtitle {
+    /* margin: 0 auto; */
+    font-size: 1.5rem;
+    /* background-color: aqua; */
+    width: 100%;
+    text-align: center;
+}
+
+.about-container resume-table{
+    width: 100%;
+
+}
+
+table,
+tr,
+td {
     /* border: 1px solid black;
     border-collapse: collapse; */
 }
@@ -12,31 +35,35 @@ table {
     width: 100%;
 }
 
-.about-container table .first-row-container .col1{
+.about-container table .first-row-container .col1 {
 
     display: flex;
     flex-direction: column;
 }
 
-.about-container table .first-row-container .col2{
+.about-container table .first-row-container .col2 {
 
     display: flex;
     flex-direction: column;
 }
 
-.about-container table .first-row-container .col2{
+.about-container table .first-row-container .col2 {
 
     display: flex;
     flex-direction: column;
 }
-.about-container table .section{
-    font-size: 2rem;
+
+.about-container table .section {
+    font-size: 1.5rem;
     background-color: var(--background-secondary);
 }
 
-.about-container table td:has(.col1){
+.about-container table td:has(.col1) {
     border-right-style: solid;
+    border-width: 0.1rem;
+
 }
-.about-container table td:has(.section){
-    border:none;
+
+.about-container table td:has(.section) {
+    border: none;
 }
