@@ -1,1 +1,1 @@
-import "./template/about/resume-table.js"
+// import "./template/about/resume-table.js"

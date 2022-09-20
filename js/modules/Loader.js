@@ -5,6 +5,8 @@ export const LoadFileToText = async (filepath) => {
 };
 
 
+
+
     // // create new link tag
     // var link = document.createElement('link');
 

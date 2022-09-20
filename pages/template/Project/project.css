@@ -1,0 +1,61 @@
+.project-container{
+    display: flex;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+.project-container .sidebar{
+    flex-basis: 20%;
+}
+.project-container .content{
+    flex-basis: 80%;
+}
+
+/* above are the layout of main container  */
+
+.project-container .sidebar{
+    display: flex;
+    flex-direction: column;
+    height : calc(100vh - 9rem);  
+    /* 7 from top , 2 for padding =9 */
+    color : var(--text-secondary);
+    overflow: auto;
+}
+
+.sidebar details{
+    padding-left: 2rem;
+}
+
+.sidebar summary{
+    cursor: pointer;
+}
+
+.sidebar li, .sidebar summary {
+    margin-bottom: 0.5rem;
+    font-size: var(--type-smaller-font-size);
+    font-weight: 400;
+}
+
+
+.project-container .sidebar ol{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    gap :0.1rem;
+    list-style: none;
+}
+
+
+.project-container .sidebar li strong{
+    font-weight: var(--font-body-strong-weight);
+    letter-spacing: .02rem;
+    font-size: var(--type-base-font-size-rem);
+}
+
+.project-container .sidebar li{
+    list-style: none;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}

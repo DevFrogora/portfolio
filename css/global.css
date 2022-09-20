@@ -8,6 +8,12 @@ html:root {
     /* Theme */
     --btn-color: #f0f0f0;
 
+    --type-smaller-font-size :0.833rem;
+    --type-base-font-size-rem : 1rem;
+
+    --font-body-strong-weight :600;
+    --letter-spacing-strong:.02rem;
+
     --font-fallback: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-family: var(--font-fallback);
 
