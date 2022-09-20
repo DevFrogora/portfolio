@@ -30,11 +30,11 @@ const handleLocation = async () => {
     const route = routes[path] || routes[404];
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("main-page").innerHTML = html;
-
+    // window.location.reload();
     switch(path)
     {
         case "/project":
-            loadJS('/pages/template/Project/projectLoader.js?cachebuster='+ new Date().getTime()  , function(){}, document.getElementById("main-page"));
+            loadJS('/pages/template/Project/projectLoader.js?cachebuster='+ new Date().getTime() , function(){}, document.getElementById("main-page"));
             break;
         case "/about":
             loadJS('/pages/template/about/resume-table.js' ,function(){}, document.getElementById("main-page"));
