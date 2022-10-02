@@ -1,5 +1,5 @@
-import { LoadFileToText } from "../../../js/modules/Loader.js";
-import {loadJS} from "../../../js/modules/ScriptLoader.js";
+import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
+import {loadJS} from "/portfolio/js/Utils/ScriptLoader.js";
 
 let sidebarLi = document.querySelectorAll(".project-container .sidebar li[data-path]");
 if (sidebarLi) {
@@ -22,8 +22,8 @@ async function loadHtmlFile(event) {
 
     switch(path)
     {
-        case "/pages/template/Project/HttpRequestChecker/httpRequestCheck.html":
-            loadJS('/pages/template/Project/HttpRequestChecker/httpRequestCheck.js?cachebuster='+ new Date().getTime() , function(){}, document.querySelector(".project-container .content"));
+        case "/portfolio/pages/template/Project/HttpRequestChecker/httpRequestCheck.html":
+            loadJS('/portfolio/pages/template/Project/HttpRequestChecker/httpRequestCheck.js?cachebuster='+ new Date().getTime() , function(){}, document.querySelector(".project-container .content"));
             break;
         default:
             break;

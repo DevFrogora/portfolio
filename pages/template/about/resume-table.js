@@ -1,19 +1,19 @@
-import { LoadFileToText } from "../../../js/modules/Loader.js";
+import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
 
 
-let headingTemplateText = await LoadFileToText("/pages/template/about/resume-heading.html");
+let headingTemplateText = await LoadFileToText("/portfolio/pages/template/about/resume-heading.html");
 let headingTemplate = document.createElement('template');
 headingTemplate.innerHTML = headingTemplateText;
 
-let educationTemplateText = await LoadFileToText("/pages/template/about/resume-education.html");
+let educationTemplateText = await LoadFileToText("/portfolio/pages/template/about/resume-education.html");
 let educationTemplate = document.createElement('template');
 educationTemplate.innerHTML = educationTemplateText;
 
-let skillTemplateText = await LoadFileToText("/pages/template/about/resume-skills.html");
+let skillTemplateText = await LoadFileToText("/portfolio/pages/template/about/resume-skills.html");
 let skillTemplate = document.createElement('template');
 skillTemplate.innerHTML = skillTemplateText;
 
-let academicTemplateText = await LoadFileToText("/pages/template/about/resume-academic.html");
+let academicTemplateText = await LoadFileToText("/portfolio/pages/template/about/resume-academic.html");
 let academicTemplate = document.createElement('template');
 academicTemplate.innerHTML = academicTemplateText;
 

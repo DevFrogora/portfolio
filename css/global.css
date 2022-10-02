@@ -1,6 +1,6 @@
-@import url("./theme/os.css");
-@import url("./theme/dark.css");
-@import url("./theme/light.css");
+@import url("/portfolio/css/theme/os.css");
+@import url("/portfolio/css/theme/dark.css");
+@import url("/portfolio/css/theme/light.css");
 
 
 html:root {

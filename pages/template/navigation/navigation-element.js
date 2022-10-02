@@ -1,10 +1,10 @@
-import { LoadFileToText } from "../../modules/Loader.js";
-import {loadJS} from "../../modules/ScriptLoader.js";
+import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
+import {loadJS} from "/portfolio/js/Utils/ScriptLoader.js";
 
 
 
 
-let navTemplate = await LoadFileToText("/js/template/navigation/navigation-template.html");
+let navTemplate = await LoadFileToText("/portfolio/pages/template/navigation/navigation-template.html");
 const template = document.createElement('template');
 template.innerHTML = navTemplate;
 // template.innerHTML.interpolate(navTemplate);
@@ -17,12 +17,12 @@ const route = (event) => {
 };
 
 const routes = {
-    404: "/pages/404.html",
-    "/": "/pages/home.html",
-    "/project": "/pages/project.html",
-    "/experience": "/pages/experience.html",
-    "/contact": "/pages/contact.html",
-    "/about": "/pages/about.html"
+    404: "/portfolio/pages/404.html",
+    "/": "/portfolio/pages/home.html",
+    "/project": "/portfolio/pages/project.html",
+    "/experience": "/portfolio/pages/experience.html",
+    "/contact": "/portfolio/pages/contact.html",
+    "/about": "/portfolio/pages/about.html"
 };
 
 const handleLocation = async () => {
@@ -34,10 +34,10 @@ const handleLocation = async () => {
     switch(path)
     {
         case "/project":
-            loadJS('/pages/template/Project/projectLoader.js?cachebuster='+ new Date().getTime() , function(){}, document.getElementById("main-page"));
+            loadJS('/portfolio/pages/template/Project/projectLoader.js?cachebuster='+ new Date().getTime() , function(){}, document.getElementById("main-page"));
             break;
         case "/about":
-            loadJS('/pages/template/about/resume-table.js' ,function(){}, document.getElementById("main-page"));
+            loadJS('/portfolio/pages/template/about/resume-table.js' ,function(){}, document.getElementById("main-page"));
         break;
         default:
             break;

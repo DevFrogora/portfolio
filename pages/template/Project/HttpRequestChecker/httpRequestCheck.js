@@ -1,4 +1,4 @@
-import { WeatherForecast } from "./Model/WeatherForcast.js"
+import { WeatherForecast } from "/portfolio/pages/template/Project/HttpRequestChecker/Model/WeatherForcast.js"
 
 let responseContainer = document.querySelector(".project-container .content .http_content .response_container pre code");
 
