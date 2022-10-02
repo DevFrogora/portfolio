@@ -44,6 +44,12 @@ const handleLocation = async () => {
     }
 };
 
+async function LoadHomeRoute()
+{
+    const html = await fetch(routes["/"]).then((data) => data.text());
+    document.getElementById("main-page").innerHTML = html;
+}
+
 window.onpopstate = handleLocation;
 window.route = route;
 handleLocation();
@@ -58,7 +64,7 @@ class Navigation extends HTMLElement {
     }
 
     connectedCallback() {
-        let toggleTheme = false;
+        let toggleTheme = true;
         this.attachShadow({ mode: "open" });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // this.shadowRoot.querySelector('span').innerHTML = this.getAttribute('name');
@@ -72,6 +78,7 @@ class Navigation extends HTMLElement {
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
 
         let button = this.shadowRoot.querySelector(".navigation-element .theme-container .btn");
+        button.querySelector(".dropdown div").style.display = "none";
         button.addEventListener('click', (e) => {
             e.stopPropagation();
             if (toggleTheme == false) {
@@ -124,7 +131,7 @@ class Navigation extends HTMLElement {
             }
         });
 
-
+        LoadHomeRoute();
     }
 
     disconnectedCallback() {
