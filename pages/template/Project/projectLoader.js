@@ -1,5 +1,5 @@
 import { LoadFileToText } from "../../../js/modules/Loader.js";
-
+import {loadJS} from "../../../js/modules/ScriptLoader.js";
 
 let sidebarLi = document.querySelectorAll(".project-container .sidebar li[data-path]");
 if (sidebarLi) {
@@ -15,16 +15,18 @@ if (sidebarLi) {
 }
 
 async function loadHtmlFile(event) {
-    // console.log(event);
     let path = event.getAttribute("data-path");
-    // console.log(path);
-    let paginationTemplateText = await LoadFileToText(path);  //"/pages/template/Project/pagination/pagination.html"
-    let paginationTemplate = document.createElement('template');
-    paginationTemplate.innerHTML = paginationTemplateText;
+    const html = await fetch(path).then((data) => data.text());
     let content = document.querySelector(".project-container .content");
-    content.innerHTML = paginationTemplate.content.cloneNode(true).textContent;
-    // console.log("inside projectLoader");
-}
+    content.innerHTML = html;
 
-// console.log("projloader.js added");
+    switch(path)
+    {
+        case "/pages/template/Project/HttpRequestChecker/httpRequestCheck.html":
+            loadJS('/pages/template/Project/HttpRequestChecker/httpRequestCheck.js?cachebuster='+ new Date().getTime() , function(){}, document.querySelector(".project-container .content"));
+            break;
+        default:
+            break;
+    }
+}
 

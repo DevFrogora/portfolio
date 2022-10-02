@@ -1,0 +1,17 @@
+.http_content{
+    display: flex;
+    flex-direction: column;
+}
+
+.http_content .request_btn{
+    display: flex;
+}
+
+.http_content .request_btn div{
+    flex: 1 1 auto;
+}
+
+.http_content .request_btn div button{
+    width: 100%;
+}
+
