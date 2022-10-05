@@ -1,6 +1,6 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
 import {loadJS} from "/portfolio/js/Utils/ScriptLoader.js";
-
+import {ProjectLoader} from "/portfolio/pages/template/Project/projectLoader.js";
 
 
 
@@ -34,7 +34,9 @@ const handleLocation = async () => {
     switch(path)
     {
         case "/project":
-            loadJS('/portfolio/pages/template/Project/projectLoader.js?cachebuster='+ new Date().getTime() , function(){}, document.getElementById("main-page"));
+            ///portfolio/pages/template/Project/projectLoader.js?cachebuster='+ new Date().getTime() 
+            // loadJS('/portfolio/pages/template/Project/projectLoader.js' , function(){}, document.getElementById("main-page"));
+            ProjectLoader();
             break;
         case "/about":
             loadJS('/portfolio/pages/template/about/resume-table.js' ,function(){}, document.getElementById("main-page"));

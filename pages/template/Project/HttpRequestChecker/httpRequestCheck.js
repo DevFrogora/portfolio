@@ -1,6 +1,7 @@
 import { WeatherForecast } from "/portfolio/pages/template/Project/HttpRequestChecker/Model/WeatherForcast.js"
 
 let responseContainer = document.querySelector(".project-container .content .http_content .response_container pre code");
+export function HttpRequestChecker(){
 
 let buttons = document.querySelectorAll(".project-container .content .http_content .request_btn div button ");
 
@@ -33,6 +34,10 @@ buttons.forEach(elem => elem.addEventListener('click', (e) => {
     }
 
 }));
+
+}
+
+
 
 function Get(id = null) {
 

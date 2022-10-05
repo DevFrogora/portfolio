@@ -1,0 +1,9 @@
+.pagination_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-secondary);
+}
+.pagination_content .title{
+    font-size: 1.7rem;
+}
