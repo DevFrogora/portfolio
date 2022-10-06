@@ -1,6 +1,7 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
 import {loadJS} from "/portfolio/js/Utils/ScriptLoader.js";
 import {ProjectLoader} from "/portfolio/pages/template/Project/projectLoader.js";
+import  "/portfolio/pages/template/about/resume-table.js";
 
 
 
@@ -39,7 +40,8 @@ const handleLocation = async () => {
             ProjectLoader();
             break;
         case "/about":
-            loadJS('/portfolio/pages/template/about/resume-table.js' ,function(){}, document.getElementById("main-page"));
+            // loadJS('/portfolio/pages/template/about/resume-table.js' ,function(){}, document.getElementById("main-page"));
+            // ResumeTable(null);
         break;
         default:
             break;

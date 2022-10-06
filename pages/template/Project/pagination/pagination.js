@@ -26,8 +26,6 @@ const list_item = [
     "item_25",
 ];
 
-
-
 let current_page = 1;
 let rows = 5; // number of item to display
 
@@ -46,8 +44,6 @@ function DisplayList(items, rows_per_page, page) {
         console.log(element);
     }
 }
-
-
 
 export function Pagination() {
     DisplayList(list_item, rows, current_page);
