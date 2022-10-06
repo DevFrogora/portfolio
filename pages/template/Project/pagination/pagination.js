@@ -1,6 +1,5 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
 
-
 const list_item = [
     "item_1",
     "item_2",
@@ -29,13 +28,14 @@ const list_item = [
     "item_25",
 ];
 
-let current_page = 2;
+let current_page = 1;
 let rows = 5; // number of item to display
 let projectItem = await LoadFileToText("/portfolio/pages/template/Project/pagination/tempt-projectItem.html"); 
+let list_wrapper;
 function DisplayList(items, rows_per_page, page) {
     let wrapper = document.querySelector('.pagination_content .content');
+    list_wrapper= wrapper;
     wrapper.innerHTML = "";
-    let pagination_element = document.getElementById('pagination');
 
     page--;
     document.cookie = "SameSite=None; Secure";
@@ -53,9 +53,42 @@ function DisplayList(items, rows_per_page, page) {
         wrapper.appendChild(cloneTemp)
 
     }
+}
+
+function SetupPagination(items,wrapper,rows_per_page){
+    wrapper.innerHTML = "";
+    let page_count = Math.ceil(items.length/rows_per_page);
+    for (let index = 1; index < page_count + 1; index++) {
+        // const element = array[index];
+        let btn = PaginationButton(index , items);
+        wrapper.appendChild(btn);
+        
+    }
 
 }
 
+function PaginationButton(index, items){
+    let button = document.createElement('button');
+    button.innerHTML = index;
+
+    if(current_page == button.innerHTML){
+
+    }
+
+    button.addEventListener('click',()=>{
+        current_page = button.innerHTML;
+        DisplayList(items,rows,current_page);
+    });
+
+
+
+    return button;
+}
+
+
+
 export function Pagination() {
+    let pagination_element = document.getElementById('pagination');
     DisplayList(list_item, rows, current_page);
+    SetupPagination(list_item,pagination_element,rows);
 }

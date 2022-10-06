@@ -7,3 +7,23 @@
 .pagination_content .title{
     font-size: 1.7rem;
 }
+
+.pagination_content .page_numbers{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination_content .page_numbers button{
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0.2rem;
+}
+
+.pagination_content .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}

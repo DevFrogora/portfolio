@@ -1,23 +1,19 @@
-.pagination_content .content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-}
 
 .pagination_content .content .container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     width: 100%;
 }
 
 
 .pagination_content .content .container #item{
     flex-grow: 1;
+    text-align: center 
 }
 
-/* .pagination_content .content iframe {
-    width: 400px;
-    height: 400px;
-    
-} */
+.pagination_content .content .container iframe{
+    width: 10rem;
+    height: 5rem;
+}
+
