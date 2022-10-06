@@ -1,3 +1,6 @@
+import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
+
+
 const list_item = [
     "item_1",
     "item_2",
@@ -26,23 +29,31 @@ const list_item = [
     "item_25",
 ];
 
-let current_page = 1;
+let current_page = 2;
 let rows = 5; // number of item to display
-
+let projectItem = await LoadFileToText("/portfolio/pages/template/Project/pagination/tempt-projectItem.html"); 
 function DisplayList(items, rows_per_page, page) {
     let wrapper = document.querySelector('.pagination_content .content');
-    let pagination_element = document.getElementById('pagination');
     wrapper.innerHTML = "";
-    page--;
+    let pagination_element = document.getElementById('pagination');
 
+    page--;
+    document.cookie = "SameSite=None; Secure";
     let loop_start = rows_per_page * page;
     // if page = 0 then loop start 0, 
     // if page = 1 then loop start 5, 
     let loop_end = loop_start + rows_per_page;
     for (let index = loop_start; index < loop_end; index++) {
         const element = items[index];
-        console.log(element);
+
+        const template = document.createElement('template');
+        template.innerHTML = projectItem;
+        const cloneTemp = template.content.cloneNode(true);  // clone it to query inside it
+        cloneTemp.querySelector(".container .name").innerHTML = element;
+        wrapper.appendChild(cloneTemp)
+
     }
+
 }
 
 export function Pagination() {
