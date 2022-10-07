@@ -3,7 +3,7 @@ import { WeatherForecast } from "/portfolio/pages/template/Project/HttpRequestCh
 let responseContainer = document.querySelector(".project-container .content .http_content .response_container pre code");
 export function HttpRequestChecker(){
 
-let buttons = document.querySelectorAll(".project-container .content .http_content .request_btn div button ");
+let buttons = document.querySelectorAll(".project-container .content .http_content #wf div button ");
 
 buttons.forEach(elem => elem.addEventListener('click', (e) => {
     e.stopPropagation();
