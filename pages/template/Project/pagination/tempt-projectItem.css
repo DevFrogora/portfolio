@@ -1,19 +1,22 @@
-
 .pagination_content .content .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 100%;
 }
 
+.pagination_content .content .container #item {
+    text-align: center;
+    /* padding: 2rem; */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 
-.pagination_content .content .container #item{
-    flex-grow: 1;
-    text-align: center 
 }
 
-.pagination_content .content .container iframe{
-    width: 10rem;
-    height: 5rem;
+.pagination_content .content .container a {
+    text-decoration: none;
+    color: inherit;
 }
 
+.pagination_content .content .container a:hover {
+    background-color: #0085f230;
+    color: #0069c2;
+    border-radius: 10%;
+}

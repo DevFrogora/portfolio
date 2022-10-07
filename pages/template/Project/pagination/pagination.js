@@ -1,7 +1,7 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
 
 const list_item = [
-    "item_1",
+    "item_1_this_tiem_is_big",
     "item_2",
     "item_3",
     "item_4",

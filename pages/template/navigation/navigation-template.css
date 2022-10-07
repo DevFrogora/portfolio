@@ -25,17 +25,8 @@
 
 .navigation-element .navigation-logo .logo img{
 
-    /* min-width: 20%;
-    min-height: 100%; */
-    /* width : 9rem;
-    height :3rem;
-    background-image: url("../../../images/logos.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; */
     object-fit: contain;
     height: inherit;
-    /* filter: var(--invert-filter); */
     filter: var(--invert-filter);
 }
 
@@ -60,8 +51,6 @@
 
 .navigation-element .theme-container button{
 
-    /* padding: 0.7rem 1.6rem;
-    border: none; */
     width :5rem;
     padding: 0;
     margin: 0;
@@ -96,8 +85,9 @@
     position: absolute;
     top : 1.5rem;
     left:0;
-    width :6rem;
+    /* width :6rem; */
     box-shadow: 0.1rem 0.1rem 8px var(--text-color);
+
 }
 
 /* .navigation-element .theme-container button .dropdown 
@@ -108,20 +98,22 @@
 
 .navigation-element .theme-container button .dropdown-container .dropdown div
 {
-    padding: 0.2rem;
     margin: 0;
     display: flex;
     flex-direction: column;
     /* background-color: var(--theme-dropdown-bg-color); */
     background-color: var(--theme-dropdown-bg-color);
     box-sizing: border-box;
-
+    padding: 0.3rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .navigation-element .theme-container button .dropdown-container .dropdown div .option
 {
     padding: 0.3rem;
-    margin: 0;
+    margin: 0.2rem;
+
     display: flex;
     flex-direction: row;
     box-sizing: border-box;

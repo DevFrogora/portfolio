@@ -1,11 +1,11 @@
 .pagination_content{
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: var(--background-secondary);
 }
 .pagination_content .title{
     font-size: 1.7rem;
+    text-align: center;
 }
 
 .pagination_content .page_numbers{
@@ -21,9 +21,9 @@
     margin: 0.2rem;
 }
 
-.pagination_content .content {
+/* .pagination_content .content {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-}
+} */
