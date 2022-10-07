@@ -21,6 +21,17 @@
     margin: 0.2rem;
 }
 
+.pagination_content .search_container{
+    margin: 1rem;
+    display: flex;
+}
+
+.pagination_content .search_container > * {
+    flex-grow: 1;
+    padding: 0.2rem;
+}
+
+
 /* .pagination_content .content {
     display: flex;
     flex-direction: column;

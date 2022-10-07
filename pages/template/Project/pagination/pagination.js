@@ -51,7 +51,6 @@ function DisplayList(items, rows_per_page, page) {
         const cloneTemp = template.content.cloneNode(true);  // clone it to query inside it
         cloneTemp.querySelector(".container .name").innerHTML = element;
         wrapper.appendChild(cloneTemp)
-
     }
 }
 
@@ -64,7 +63,6 @@ function SetupPagination(items,wrapper,rows_per_page){
         wrapper.appendChild(btn);
         
     }
-
 }
 
 function PaginationButton(index, items){
@@ -72,20 +70,14 @@ function PaginationButton(index, items){
     button.innerHTML = index;
 
     if(current_page == button.innerHTML){
-
     }
 
     button.addEventListener('click',()=>{
         current_page = button.innerHTML;
         DisplayList(items,rows,current_page);
     });
-
-
-
     return button;
 }
-
-
 
 export function Pagination() {
     let pagination_element = document.getElementById('pagination');
