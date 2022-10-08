@@ -30,7 +30,17 @@ navigation-menu li:hover{
     align-items:center;
 
 }
+
+#action-container .icon_language{
+    /* background-image : url(/portfolio/images/icons/globe.svg); */
+    height: 1rem;
+    width: 1rem;
+    filter: var(--invert-filter);
+    padding-right: 0.2rem;
+}
+
 #action-container button{
+    display: flex;
     margin: 0.3rem;;
     padding: 0.1rem;
     font-size: 0.8rem;
