@@ -1,7 +1,7 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
-import {loadJS} from "/portfolio/js/Utils/ScriptLoader.js";
-import {ProjectLoader} from "/portfolio/pages/template/Project/projectLoader.js";
-import  "/portfolio/pages/template/about/resume-table.js";
+import { loadJS } from "/portfolio/js/Utils/ScriptLoader.js";
+import { ProjectLoader } from "/portfolio/pages/template/Project/projectLoader.js";
+import "/portfolio/pages/template/about/resume-table.js";
 
 
 
@@ -32,8 +32,7 @@ const handleLocation = async () => {
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("main-page").innerHTML = html;
     // window.location.reload();
-    switch(path)
-    {
+    switch (path) {
         case "/project":
             ///portfolio/pages/template/Project/projectLoader.js?cachebuster='+ new Date().getTime() 
             // loadJS('/portfolio/pages/template/Project/projectLoader.js' , function(){}, document.getElementById("main-page"));
@@ -42,14 +41,14 @@ const handleLocation = async () => {
         case "/about":
             // loadJS('/portfolio/pages/template/about/resume-table.js' ,function(){}, document.getElementById("main-page"));
             // ResumeTable(null);
-        break;
+            break;
         default:
+            LoadHomeRoute();
             break;
     }
 };
 
-async function LoadHomeRoute()
-{
+async function LoadHomeRoute() {
     const html = await fetch(routes["/"]).then((data) => data.text());
     document.getElementById("main-page").innerHTML = html;
 }
@@ -73,9 +72,9 @@ class Navigation extends HTMLElement {
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         // this.shadowRoot.querySelector('span').innerHTML = this.getAttribute('name');
         this.shadowRoot.querySelector('.navigation-element .navigation-logo .logo img').
-            addEventListener('click', (e) => { 
+            addEventListener('click', (e) => {
                 // console.log(e); 
-                this.OnSlotItemClicked(e.target); 
+                this.OnSlotItemClicked(e.target);
             });
 
         this.shadowRoot.querySelector('slot').
@@ -135,7 +134,6 @@ class Navigation extends HTMLElement {
             }
         });
 
-        LoadHomeRoute();
     }
 
     disconnectedCallback() {
