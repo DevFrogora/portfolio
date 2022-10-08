@@ -1,9 +1,9 @@
-export class WeatherForecast {
-    constructor(id = null, date = null, projectName = null, language = null,
+export class Project {
+    constructor(id = null, date = null, name = null, language = null,
         applicationType = null, sourceLink = null, previewLink = null) {
         this.id = id;
-        this.projectName = projectName;
-        this.language = language;
+        this.name = name;
+        this.languages = languages;
         this.applicationType = applicationType;
         this.sourceLink = sourceLink;
         this.previewLink = previewLink;

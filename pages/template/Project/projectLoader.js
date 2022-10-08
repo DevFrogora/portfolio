@@ -1,7 +1,7 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
 import { loadJS } from "/portfolio/js/Utils/ScriptLoader.js";
 import { Pagination } from "/portfolio/pages/template/Project/pagination/pagination.js";
-import {HttpRequestChecker} from "/portfolio/pages/template/Project/HttpRequestChecker/httpRequestCheck.js";
+import { HttpRequestChecker } from "/portfolio/pages/template/Project/HttpRequestChecker/httpRequestCheck.js";
 
 
 async function loadHtmlFile(event) {
@@ -26,7 +26,7 @@ async function loadHtmlFile(event) {
 }
 
 
-export function ProjectLoader(){
+export function ProjectLoader() {
     let sidebarLi = document.querySelectorAll(".project-container .sidebar li[data-path]");
     if (sidebarLi) {
         sidebarLi.forEach(elem => {
@@ -36,8 +36,16 @@ export function ProjectLoader(){
                 loadHtmlFile(e.currentTarget);
             });
         })
+        loadDefaultPage();
     } else {
         console.log(sidebarLi);
     }
+}
 
+async function loadDefaultPage() {
+    let path ="/portfolio/pages/template/Project/pagination/pagination.html";
+    const html = await fetch(path).then((data) => data.text());
+    let content = document.querySelector(".project-container .content");
+    content.innerHTML = html;
+    Pagination();
 }

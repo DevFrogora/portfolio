@@ -1,4 +1,5 @@
 import { WeatherForecast } from "/portfolio/pages/template/Project/HttpRequestChecker/Model/WeatherForcast.js"
+import {Get } from "/portfolio/pages/template/Project/HttpRequestChecker/RestFullApiRequester.js"
 
 let responseContainer = document.querySelector(".project-container .content .http_content .response_container pre code");
 export function HttpRequestChecker(){
@@ -10,7 +11,11 @@ buttons.forEach(elem => elem.addEventListener('click', (e) => {
     let btn = e.currentTarget.getAttribute("data-btn");
     switch (btn) {
         case "GET": console.log("GET");
-            Get();
+            (async()=>{
+                let obj = await Get("https://localhost:5001/project",null);
+                console.log(obj);
+            })();
+
             break;
         case "GET_BY_ID": console.log("GET By ID");
             Get(2);
@@ -39,71 +44,71 @@ buttons.forEach(elem => elem.addEventListener('click', (e) => {
 
 
 
-function Get(id = null) {
+// function Get(id = null) {
 
-    let requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-    };
+//     let requestOptions = {
+//         method: 'GET',
+//         redirect: 'follow'
+//     };
 
-    let url = "";
-    if (id != null) {
-        url = "https://localhost:5001/" + id;
-    } else {
-        url = "https://localhost:5001/";
-    }
-    FetchRequest(url,requestOptions);
+//     let url = "";
+//     if (id != null) {
+//         url = "https://localhost:5001/" + id;
+//     } else {
+//         url = "https://localhost:5001/";
+//     }
+//     FetchRequest(url,requestOptions);
 
-}
+// }
 
-function Post(ModelObject) {
+// function Post(ModelObject) {
 
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+//     let myHeaders = new Headers();
+//     myHeaders.append("Content-Type", "application/json");
 
-    let raw = JSON.stringify(ModelObject);
+//     let raw = JSON.stringify(ModelObject);
 
-    let requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
+//     let requestOptions = {
+//         method: 'POST',
+//         headers: myHeaders,
+//         body: raw,
+//         redirect: 'follow'
+//     };
 
-    let url = "https://localhost:5001/";
-    FetchRequest(url,requestOptions);
-}
+//     let url = "https://localhost:5001/";
+//     FetchRequest(url,requestOptions);
+// }
 
-function Put(id, ModelObject) {
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+// function Put(id, ModelObject) {
+//     let myHeaders = new Headers();
+//     myHeaders.append("Content-Type", "application/json");
 
-    let raw = JSON.stringify(ModelObject);
+//     let raw = JSON.stringify(ModelObject);
 
-    let requestOptions = {
-        method: 'PUT',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-    let url = "https://localhost:5001/"+id;
-    FetchRequest(url,requestOptions);
-}
+//     let requestOptions = {
+//         method: 'PUT',
+//         headers: myHeaders,
+//         body: raw,
+//         redirect: 'follow'
+//     };
+//     let url = "https://localhost:5001/"+id;
+//     FetchRequest(url,requestOptions);
+// }
 
-function Delete(id) {
-    let requestOptions = {
-        method: 'DELETE',
-        redirect: 'follow'
-    };
+// function Delete(id) {
+//     let requestOptions = {
+//         method: 'DELETE',
+//         redirect: 'follow'
+//     };
 
-    let url = "https://localhost:5001/"+id;
-    FetchRequest(url,requestOptions);
+//     let url = "https://localhost:5001/"+id;
+//     FetchRequest(url,requestOptions);
 
-}
+// }
 
-function FetchRequest(url,requestOptions){
-    fetch(url, requestOptions)
-    .then(response => response.json())
-    .then(result => responseContainer.innerHTML = JSON.stringify(result, null, 4))
-    .catch(error => console.log('error', error));
-}
+// function FetchRequest(url,requestOptions){
+//     fetch(url, requestOptions)
+//     .then(response => response.json())
+//     .then(result => responseContainer.innerHTML = JSON.stringify(result, null, 4))
+//     .catch(error => console.log('error', error));
+// }

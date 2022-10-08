@@ -55,6 +55,7 @@
 
 .project-container .sidebar li{
     list-style: none;
+    cursor: pointer;
 }
 
 .project-container .sidebar li:hover{
