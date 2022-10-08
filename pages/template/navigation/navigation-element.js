@@ -42,6 +42,10 @@ const handleLocation = async () => {
             // loadJS('/portfolio/pages/template/about/resume-table.js' ,function(){}, document.getElementById("main-page"));
             // ResumeTable(null);
             break;
+        case "/contact":
+            break;
+        case "/experience":
+            break;
         default:
             LoadHomeRoute();
             break;
