@@ -1,0 +1,30 @@
+.message_template {
+    margin : 1rem;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 0.2px;
+    border-color: var(--background-secondary);
+    padding: 1rem;
+}
+
+.message_template .header{
+    display: flex;
+}
+
+.message_template .header > * {
+    background-color: var(--background-secondary);
+}
+
+.message_template .user_name {
+    font-size: 1.2rem;
+    font-weight :600;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+
+.message_template .message {
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+}

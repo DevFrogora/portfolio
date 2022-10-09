@@ -1,6 +1,7 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
 import { loadJS } from "/portfolio/js/Utils/ScriptLoader.js";
 import { ProjectLoader } from "/portfolio/pages/template/Project/projectLoader.js";
+import { Contact } from "/portfolio/pages/template/contact/contact.js";
 import "/portfolio/pages/template/about/resume-table.js";
 
 
@@ -43,6 +44,7 @@ const handleLocation = async () => {
             // ResumeTable(null);
             break;
         case "/contact":
+            Contact();
             break;
         case "/experience":
             break;

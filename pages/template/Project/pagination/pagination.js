@@ -107,8 +107,12 @@ let searchList = [];
 
 export async function Pagination() {
     list_item = await Get("https://localhost:5001/project/",null);
-    console.log(list_item);
-    DisplayList(list_item, rows, current_page);
-    SetupPagination(list_item, rows);
-    SearchButton();
+    if(list_item != null)
+    {
+        console.log(list_item);
+        DisplayList(list_item, rows, current_page);
+        SetupPagination(list_item, rows);
+        SearchButton();
+    }
+
 }
