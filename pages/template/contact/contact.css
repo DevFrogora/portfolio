@@ -46,3 +46,16 @@
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
+.contact-container .message_container .pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.contact-container .message_container .pagination  button{
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 0.2rem;
+}

@@ -1,7 +1,7 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
-import {Get } from "/portfolio/js/Utils/RestFullApiRequester.js"
+import { Get } from "/portfolio/js/Utils/RestFullApiRequester.js"
 
-let list_item ;
+let list_item;
 let current_page = 1;
 let rows = 5; // number of item to display
 
@@ -19,13 +19,14 @@ function DisplayList(items, rows_per_page, page) {
     for (let index = loop_start; index < loop_end; index++) {
         const element = items[index];
 
-        if(element)
-        {   const template = document.createElement('template');
+        if (element) {
+            console.log(element);
+            const template = document.createElement('template');
             template.innerHTML = message_template_text;
             const cloneTemp = template.content.cloneNode(true);  // clone it to query inside it
             cloneTemp.querySelector(".message_template .user_name").innerHTML = element.username;
             cloneTemp.querySelector(".message_template .type").innerHTML = element.type;
-            cloneTemp.querySelector(".message_template .message").href = element.message;
+            cloneTemp.querySelector(".message_template .message").innerHTML = element.message;
             let dt = new Date(element.date);
             let day = dt.getDate(),
                 month = dt.getMonth(),
@@ -40,14 +41,16 @@ function DisplayList(items, rows_per_page, page) {
     }
 }
 
-function SetupPagination(items,  rows_per_page) {
+function SetupPagination(items, rows_per_page) {
     let wrapper = document.querySelector('.contact-container .message_container .pagination');
     wrapper.innerHTML = "";
-    let page_count = Math.ceil(items.length / rows_per_page);
-    for (let index = 1; index < page_count + 1; index++) {
-        // const element = array[index];
-        let btn = PaginationButton(index, items);
-        wrapper.appendChild(btn);
+    if (items.length > 0) {
+        let page_count = Math.ceil(items.length / rows_per_page);
+        for (let index = 1; index < page_count + 1; index++) {
+            // const element = array[index];
+            let btn = PaginationButton(index, items);
+            wrapper.appendChild(btn);
+        }
     }
 }
 
@@ -64,14 +67,39 @@ function PaginationButton(index, items) {
     });
     return button;
 }
-
-
-export async function Contact_Pagination() {
-    list_item = await Get("https://localhost:5001/contact/",null);
-    if(list_item != null)
-    {
-        console.log(list_item);
-        DisplayList(list_item, rows, current_page);
-        SetupPagination(list_item, rows);
+let isread;
+let readList = [];
+let unreadList = [];
+export async function Contact_Pagination(arg1) {
+    isread = arg1;
+    list_item = await Get("https://localhost:5001/contact/", null);
+    if (list_item != null) {
+        let readIndexForSearch = 0;
+        let unreadIndexForSearch = 0;
+        let itemsProcessed = 0;
+        list_item.forEach(element => {
+            if (element.isread) {
+                readList[readIndexForSearch] = element;
+                readIndexForSearch++;
+            }
+            if (!element.isread) {
+                unreadList[unreadIndexForSearch] = element;
+                unreadIndexForSearch++;
+            }
+            itemsProcessed++;
+            if (itemsProcessed === list_item.length) {
+                if(isread){
+                    DisplayList(readList, rows, current_page);
+                    SetupPagination(readList, rows);
+                }
+                if(!isread){
+                    DisplayList(unreadList, rows, current_page);
+                    SetupPagination(unreadList, rows);
+                }
+            }
+        });
+        // console.log(list_item);
+        // DisplayList(list_item, rows, current_page);
+        // SetupPagination(list_item, rows);
     }
 }
