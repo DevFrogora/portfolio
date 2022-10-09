@@ -6,19 +6,19 @@
         My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to
         you!
     </div>
-    <form>
-        <input class="item" placeholder="Name" type="text" />
-        <input class="item" placeholder="Email" type="email" />
-        <textarea class="item" placeholder="Message"></textarea>
+    <form onsubmit="return false">
+        <input class="item" placeholder="Name" type="text" name="username" />
+        <input class="item" placeholder="Email" type="email" name="email"/>
+        <textarea class="item" placeholder="Message" name="message"></textarea>
 
         <label class="item"> Message Type </label>
-        <select class="item">
+        <select name="type" class="item">
             <option value="Urgent">Urgent</option>
             <option value="Hiring">Hiring</option>
             <option value="Greeting">Greeting</option>
-            <option value="Spam">Spamming</option>
+            <option value="Spamming">Spamming</option>
         </select>
-        <input class="item" type="submit" />
+        <input class="item" type="submit"/>
     </form>
     <div class="message_container">
         <div class="header">
@@ -30,12 +30,8 @@
             <button class="read">Read Message</button>
         </div>
         <div class="content">
-
         </div>
         <div class="pagination">
-
         </div>
-
     </div>
-
 </div>

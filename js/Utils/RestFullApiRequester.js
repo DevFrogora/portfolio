@@ -10,7 +10,7 @@ export async function Get(url,id = null) {
    return await FetchRequest(url,requestOptions);
 }
 
-export function Post(url,ModelObject) {
+export async function Post(url,ModelObject) {
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     let raw = JSON.stringify(ModelObject);
@@ -21,7 +21,9 @@ export function Post(url,ModelObject) {
         body: raw,
         redirect: 'follow'
     };
-    FetchRequest(url,requestOptions);
+  return await  fetch(url, requestOptions)
+  .then(response => {return response})
+  .catch(error => console.log('error', error));
 }
 
 export function Put(url,id, ModelObject) {
