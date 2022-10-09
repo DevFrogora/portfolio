@@ -19,12 +19,9 @@ navigation-menu li:hover{
     background-color: var(--background-secondary);
 
     border-bottom: 1px solid #858585;
-
-
     padding: 0 16rem;
     width: 100%;
     box-sizing: border-box;
-
     display: flex;
     justify-content:flex-end;
     align-items:center;
