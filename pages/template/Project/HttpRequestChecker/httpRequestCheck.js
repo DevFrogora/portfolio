@@ -1,5 +1,5 @@
 import { WeatherForecast } from "/portfolio/pages/template/Project/HttpRequestChecker/Model/WeatherForcast.js"
-import {Get } from "/portfolio/pages/template/Project/HttpRequestChecker/RestFullApiRequester.js"
+import {Get } from "/portfolio/js/Utils/RestFullApiRequester.js"
 
 let responseContainer = document.querySelector(".project-container .content .http_content .response_container pre code");
 export function HttpRequestChecker(){
