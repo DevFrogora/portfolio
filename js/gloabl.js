@@ -9,9 +9,17 @@ class db {
         this.contact = contact;
     }
 }
+
+class urldb {
+    constructor(webapiDomain){
+        this.webapiDomain = webapiDomain;
+    }
+}
 let webapi_domain="https://portfoliowebapi.azurewebsites.net"
-let project= await Get(webapi_domain+"/project/",null);
-let contact = await Get(webapi_domain+"/contact/", null);
+window.urllist = new urldb(webapi_domain);
+
+let project= await Get(window.urllist.webapiDomain+"/project/",null);
+let contact = await Get(window.urllist.webapiDomain+"/contact/", null);
 window.db = new db(project,contact);
 // window.contact = contact;
 // console.log(window.db.project);

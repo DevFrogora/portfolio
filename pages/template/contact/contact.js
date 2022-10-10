@@ -40,10 +40,10 @@ function RegisterButtons(){
         let type=  document.querySelector(".contact-container form select[name=\"type\"] ").value;
         let message=  document.querySelector(".contact-container form textarea[name=\"message\"] ").value;
         let messageModel = new Message(id,username,email,"2022-10-09T08:51:47.5595935+00:00",type,message,false);
-        let response =  await Post("https://localhost:5001/contact/",messageModel);
+        let response =  await Post(window.urllist.webapiDomain+"/contact/",messageModel);
         if(response.status == 200){
 
-                window.db.contact = await Get("https://localhost:5001/contact/", null);
+                window.db.contact = await Get(window.urllist.webapiDomain+"/contact/", null);
                 Contact_Pagination(isReadContent);
                 console.log(window.contact);
                 console.log("submitted");
