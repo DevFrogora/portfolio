@@ -9,9 +9,9 @@ class db {
         this.contact = contact;
     }
 }
-
-let project= await Get("https://localhost:5001/project/",null);
-let contact = await Get("https://localhost:5001/contact/", null);
+let webapi_domain="https://portfoliowebapi.azurewebsites.net"
+let project= await Get(webapi_domain+"/project/",null);
+let contact = await Get(webapi_domain+"/contact/", null);
 window.db = new db(project,contact);
 // window.contact = contact;
 // console.log(window.db.project);
