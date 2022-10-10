@@ -10,10 +10,12 @@
 
 .message_template .header{
     display: flex;
+    gap:1rem;
+    background-color: var(--background-secondary);
+
 }
 
 .message_template .header > * {
-    background-color: var(--background-secondary);
 }
 
 .message_template .user_name {

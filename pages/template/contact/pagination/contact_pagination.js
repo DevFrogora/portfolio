@@ -20,7 +20,7 @@ function DisplayList(items, rows_per_page, page) {
         const element = items[index];
 
         if (element) {
-            console.log(element);
+            // console.log(element);
             const template = document.createElement('template');
             template.innerHTML = message_template_text;
             const cloneTemp = template.content.cloneNode(true);  // clone it to query inside it
@@ -72,7 +72,8 @@ let readList = [];
 let unreadList = [];
 export async function Contact_Pagination(arg1) {
     isread = arg1;
-    list_item = await Get("https://localhost:5001/contact/", null);
+    // list_item = await Get("https://localhost:5001/contact/", null);
+    list_item = window.db.contact;
     if (list_item != null) {
         let readIndexForSearch = 0;
         let unreadIndexForSearch = 0;

@@ -1,6 +1,6 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
 import { Contact_Pagination } from "/portfolio/pages/template/contact/pagination/contact_pagination.js";
-import {Post } from "/portfolio/js/Utils/RestFullApiRequester.js"
+import {Post , Get } from "/portfolio/js/Utils/RestFullApiRequester.js"
 import { Message } from "/portfolio/pages/template/contact/Model/Message.js"
 let message_template_text = await LoadFileToText("/portfolio/pages/template/contact/messageTemplate.html");
 
@@ -42,7 +42,11 @@ function RegisterButtons(){
         let messageModel = new Message(id,username,email,"2022-10-09T08:51:47.5595935+00:00",type,message,false);
         let response =  await Post("https://localhost:5001/contact/",messageModel);
         if(response.status == 200){
-            Contact_Pagination(isReadContent);
+
+                window.db.contact = await Get("https://localhost:5001/contact/", null);
+                Contact_Pagination(isReadContent);
+                console.log(window.contact);
+                console.log("submitted");
         }
         console.log(response);
     })
