@@ -1,5 +1,5 @@
 import { LoadFileToText } from "/portfolio/js/Utils/Loader.js";
-import { Get } from "/portfolio/js/Utils/RestFullApiRequester.js"
+// import { Get } from "/portfolio/js/Utils/RestFullApiRequester.js"
 
 let list_item;
 let current_page = 1;
