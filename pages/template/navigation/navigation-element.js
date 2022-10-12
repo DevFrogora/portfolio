@@ -3,7 +3,7 @@ import { loadJS } from "/portfolio/js/Utils/ScriptLoader.js";
 import { ProjectLoader } from "/portfolio/pages/template/Project/projectLoader.js";
 import { Contact } from "/portfolio/pages/template/contact/contact.js";
 import "/portfolio/pages/template/about/resume-table.js";
-
+import { home } from "/portfolio/pages/template/home/home.js";
 
 
 let navTemplate = await LoadFileToText("/portfolio/pages/template/navigation/navigation-template.html");
@@ -34,6 +34,9 @@ const handleLocation = async () => {
     document.getElementById("main-page").innerHTML = html;
     // window.location.reload();
     switch (path) {
+        case "/":
+            home();
+            break;
         case "/project":
             ///portfolio/pages/template/Project/projectLoader.js?cachebuster='+ new Date().getTime() 
             // loadJS('/portfolio/pages/template/Project/projectLoader.js' , function(){}, document.getElementById("main-page"));
@@ -57,6 +60,7 @@ const handleLocation = async () => {
 async function LoadHomeRoute() {
     const html = await fetch(routes["/"]).then((data) => data.text());
     document.getElementById("main-page").innerHTML = html;
+    home();
 }
 
 window.onpopstate = handleLocation;
