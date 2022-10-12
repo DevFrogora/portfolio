@@ -34,6 +34,9 @@ td {
 table {
     width: 100%;
 }
+table td{
+    vertical-align: top;
+}
 
 .about-container table .first-row-container .col1 {
 

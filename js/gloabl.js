@@ -4,9 +4,10 @@ import {Get } from "/portfolio/js/Utils/RestFullApiRequester.js"
 // }
 
 class db {
-    constructor(project,contact){
+    constructor(project,contact,resume){
         this.project = project;
         this.contact = contact;
+        this.resume = resume;
     }
 }
 
@@ -15,12 +16,16 @@ class urldb {
         this.webapiDomain = webapiDomain;
     }
 }
-let webapi_domain="https://portfoliowebapi.azurewebsites.net"
+let localHost = "https://localhost:5001";
+let azureHost = "https://portfoliowebapi.azurewebsites.net";
+let webapi_domain=localHost;  //
 window.urllist = new urldb(webapi_domain);
 
 let project= await Get(window.urllist.webapiDomain+"/project/",null);
 let contact = await Get(window.urllist.webapiDomain+"/contact/", null);
-window.db = new db(project,contact);
+let resume = await Get(window.urllist.webapiDomain+"/resume/", null);
+window.db = new db(project,contact,resume);
+
 // window.contact = contact;
 // console.log(window.db.project);
 
