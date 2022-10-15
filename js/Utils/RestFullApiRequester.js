@@ -1,4 +1,4 @@
-export async function Get(url,id = null) {
+export async function Get(url, id = null) {
     let requestOptions = {
         method: 'GET',
         redirect: 'follow'
@@ -7,10 +7,10 @@ export async function Get(url,id = null) {
     if (id != null) {
         url = url + id;
     }
-   return await FetchRequest(url,requestOptions);
+    return await FetchRequest(url, requestOptions);
 }
 
-export async function Post(url,ModelObject) {
+export async function Post(url, ModelObject) {
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     let raw = JSON.stringify(ModelObject);
@@ -21,12 +21,12 @@ export async function Post(url,ModelObject) {
         body: raw,
         redirect: 'follow'
     };
-  return await  fetch(url, requestOptions)
-  .then(response => {return response})
-  .catch(error => console.log('error', error));
+    return await fetch(url, requestOptions)
+        .then(response => { return response })
+        .catch(error => console.log('error', error));
 }
 
-export function Put(url,id, ModelObject) {
+export function Put(url, id, ModelObject) {
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     let raw = JSON.stringify(ModelObject);
@@ -37,23 +37,42 @@ export function Put(url,id, ModelObject) {
         body: raw,
         redirect: 'follow'
     };
-    url = url+id;
-    FetchRequest(url,requestOptions);
+    url = url + id;
+    FetchRequest(url, requestOptions);
 }
 
-export function Delete(url,id) {
+export function Delete(url, id) {
     let requestOptions = {
         method: 'DELETE',
         redirect: 'follow'
     };
 
-    url = url+id;
-    FetchRequest(url,requestOptions);
+    url = url + id;
+    FetchRequest(url, requestOptions);
 }
 
-async function FetchRequest(url,requestOptions){
- return await fetch(url, requestOptions)
-    .then(response => response.json())
-    .then(result => {return result})
-    .catch(error => console.log('error', error));
+async function FetchRequest(url, requestOptions) {
+    return await fetch(url, requestOptions)
+        .then(response => response.json())
+        .then(result => { return result })
+        .catch(error => console.log('error', error));
 }  //storeValueIn = JSON.stringify(result, null, 4)
+
+export async function PostWithAuth(url,username, password, data) {
+    let myHeaders = new Headers();
+    let encoded = window.btoa(username + ":" + password);
+    let auth = "Basic " + encoded;
+    myHeaders.append("Authorization", auth);
+
+    let raw = data;
+
+    let requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+    return await fetch(url, requestOptions)
+    .then(response => { return response })
+    .catch(error => console.log('error', error));
+}

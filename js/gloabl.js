@@ -16,9 +16,10 @@ class urldb {
         this.webapiDomain = webapiDomain;
     }
 }
+let debugLocalhost = "http://localhost:5187";
 let localHost = "https://localhost:5001";
 let azureHost = "https://portfoliowebapi.azurewebsites.net";
-let webapi_domain=azureHost;  //
+let webapi_domain=debugLocalhost;  //
 window.urllist = new urldb(webapi_domain);
 
 let resume = await Get(window.urllist.webapiDomain+"/resume/", null);

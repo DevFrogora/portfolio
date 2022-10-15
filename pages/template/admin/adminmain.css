@@ -1,0 +1,23 @@
+.admin_container{
+    display: flex;
+    
+}
+
+.admin_container .sidebar{
+    flex-basis: 20%;
+}
+.admin_container .content{
+    flex-basis: 80%;
+    margin: 1rem;
+}
+
+/* above are the layout of main container  */
+
+.project-container .sidebar{
+    display: flex;
+    flex-direction: column;
+    /* height : calc(100vh - 9rem);   */
+    /* 7 from top , 2 for padding =9 */
+    color : var(--text-secondary);
+    overflow: auto;
+}

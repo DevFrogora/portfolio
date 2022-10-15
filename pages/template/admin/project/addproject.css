@@ -1,0 +1,80 @@
+.projectpanel{
+    display: flex;
+}
+.projectpanel .projectTemp{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectpanel .projectTemp .first {
+    display: flex;
+    width: 100%;
+}
+.projectpanel .projectTemp .first div{
+    flex-grow: 1;
+    display: flex;
+    margin:0.3rem;
+
+}
+
+.projectpanel .projectTemp .first div input{
+    flex-grow: 1;
+    padding: 0.3rem;
+    width: 0;
+}
+
+.projectpanel .projectTemp .second {
+    display: flex;
+    width: 100%;
+}
+.projectpanel .projectTemp .second div{
+    flex-grow: 1;
+    display: flex;
+    margin:0.3rem;
+
+}
+
+.projectpanel .projectTemp .second div input{
+    flex-grow: 1;
+    width: 0;
+    padding: 0.3rem;
+
+
+
+}
+
+.projectpanel .projectTemp .third {
+    display: flex;
+    width: 100%;
+}
+.projectpanel .projectTemp .third div{
+    flex-grow: 1;
+    display: flex;
+    margin:0.3rem;
+}
+
+.projectpanel .projectTemp .third div input{
+    flex-grow: 1;
+    width: 0;
+    padding: 0.3rem;
+
+}
+
+.projectpanel .projectTemp .fourth {
+    display: flex;
+    width: 100%;
+    
+}
+.projectpanel .projectTemp .fourth div{
+    flex-grow: 1;
+    display: flex;
+    margin:0.3rem;
+}
+
+.projectpanel .projectTemp .fourth div input{
+    flex-grow: 1;
+    width: 0;
+    padding: 0.3rem;
+}

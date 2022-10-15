@@ -4,11 +4,12 @@ import { ProjectLoader } from "/portfolio/pages/template/Project/projectLoader.j
 import { Contact } from "/portfolio/pages/template/contact/contact.js";
 import "/portfolio/pages/template/about/resume-table.js";
 import { home } from "/portfolio/pages/template/home/home.js";
+import { Admin } from "/portfolio/pages/template/admin/admin.js";
 
 
-let navTemplate = await LoadFileToText("/portfolio/pages/template/navigation/navigation-template.html");
+let navTemplateText = await LoadFileToText("/portfolio/pages/template/navigation/navigation-template.html");
 const template = document.createElement('template');
-template.innerHTML = navTemplate;
+template.innerHTML = navTemplateText;
 // template.innerHTML.interpolate(navTemplate);
 
 const route = (event) => {
@@ -24,8 +25,11 @@ const routes = {
     "/project": "/portfolio/pages/project.html",
     "/experience": "/portfolio/pages/experience.html",
     "/contact": "/portfolio/pages/contact.html",
-    "/about": "/portfolio/pages/about.html"
+    "/about": "/portfolio/pages/about.html",
+    "/admin" : "/portfolio/pages/admin.html"
 };
+
+window.routes = routes;
 
 const handleLocation = async () => {
     const path = window.location.pathname;
@@ -90,6 +94,7 @@ class Navigation extends HTMLElement {
         this.shadowRoot.querySelector('slot').
             addEventListener('click', (e) => this.OnSlotItemClicked(e.target));
 
+
         let button = this.shadowRoot.querySelector(".navigation-element .theme-container .btn");
         button.querySelector(".dropdown div").style.display = "none";
         button.addEventListener('click', (e) => {
@@ -142,6 +147,13 @@ class Navigation extends HTMLElement {
                 button.querySelector(".dropdown div").style.display = "none";
                 toggleTheme = true;
             }
+        });
+
+        this.shadowRoot.querySelector('.navigation-element .admin_btn').
+        addEventListener('click',async (e) => {
+            const html = await fetch(routes["/admin"]).then((data) => data.text());
+            document.getElementById("main-page").innerHTML = html;
+            Admin();
         });
 
     }
