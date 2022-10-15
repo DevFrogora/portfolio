@@ -4,19 +4,20 @@ import { Project } from "/portfolio/pages/template/Project/Models/ProjectModel.j
 export function Admin() {
     login();
 }
-
+let username;
+let password;
 function login() {
 
     let loginbtn = document.querySelector(".admin_container .login_page form button")
     loginbtn.addEventListener("click", async () => {
-        let username = document.querySelector(".admin_container .login_page form input[name=\"username\"] ").value;
-        let password = document.querySelector(".admin_container .login_page form input[name=\"password\"] ").value;
+         username = document.querySelector(".admin_container .login_page form input[name=\"username\"] ").value;
+         password = document.querySelector(".admin_container .login_page form input[name=\"password\"] ").value;
         //  alert(username + " "+ password);
         let response = await PostWithAuth(window.urllist.webapiDomain + "/admin", username, password, "");
-        if (response == 200) {
-            alert(response.status);
-        } else {
+        if (response.status == 200) {
             adminMain();
+        } else {
+            alert(response.status);
         }
     })
 }
@@ -46,7 +47,7 @@ async function loadProjectPage() {
 
 }
 
-function AddProject(template) {
+async function AddProject(template) {
     let primaryid = template.querySelector(".projectpanel .projectTemp .first input[name=\"pid\"] ").value;
     let name = template.querySelector(".projectpanel .projectTemp .first input[name=\"name\"] ").value;
     let applicationType = template.querySelector(".projectpanel .projectTemp .first input[name=\"applicationType\"] ").value;
@@ -55,8 +56,8 @@ function AddProject(template) {
     let sourceLink = template.querySelector(".projectpanel .projectTemp .fourth input[name=\"sourceLink\"] ").value;
     let previewLink = template.querySelector(".projectpanel .projectTemp .fourth input[name=\"previewLink\"] ").value;
     let contributedBy = template.querySelector(".projectpanel .projectTemp .fourth input[name=\"contributedBy\"] ").value;
-    let date = template.querySelector(".projectpanel .projectTemp .fourth input[name=\"date\"] ").value;
-
+    // let date = template.querySelector(".projectpanel .projectTemp .fourth input[name=\"date\"] ").value;
+    let date = "2021-10-22T14:12:50.3080603-10:00"; // default
     let summaryArray = [];
     if (summary != '') {
         summaryArray = summary.split(",");
@@ -73,8 +74,10 @@ function AddProject(template) {
         contributedByArray = null;
     }
 
-    let p = new Project(primaryid, date, name, languages, applicationType, sourceLink, previewLink, contributedByArray, summaryArray);
+    let p = new Project(parseInt(primaryid),  name, languages, applicationType, sourceLink, previewLink, summaryArray, contributedByArray ,date);
     console.log(p);
+    let response = await PostWithAuth(window.urllist.webapiDomain + "/project", username, password, p);
+    alert(response.status);
 }
 
 

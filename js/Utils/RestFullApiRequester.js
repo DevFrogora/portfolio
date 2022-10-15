@@ -58,13 +58,15 @@ async function FetchRequest(url, requestOptions) {
         .catch(error => console.log('error', error));
 }  //storeValueIn = JSON.stringify(result, null, 4)
 
-export async function PostWithAuth(url,username, password, data) {
+export async function PostWithAuth(url,username, password, ModelObject) {
     let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     let encoded = window.btoa(username + ":" + password);
     let auth = "Basic " + encoded;
     myHeaders.append("Authorization", auth);
 
-    let raw = data;
+    let raw = JSON.stringify(ModelObject);
+    console.log(raw);
 
     let requestOptions = {
         method: 'POST',
