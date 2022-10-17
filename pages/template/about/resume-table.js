@@ -8,7 +8,7 @@ class ResumeTableElement extends HTMLElement {
 
     connectedCallback() {
         (async () => {
-            let resume = window.db.resume;
+            let resume =  window.db.resume;
             let headingTemplate = document.createElement('template');
             headingTemplate.innerHTML = Basics(resume.basics);
 

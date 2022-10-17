@@ -73,7 +73,7 @@ let unreadList = [];
 export async function Contact_Pagination(arg1) {
     isread = arg1;
     // list_item = await Get("https://localhost:5001/contact/", null);
-    list_item = window.db.contact;
+    list_item =  window.db.contact;
     if (list_item != null) {
         let readIndexForSearch = 0;
         let unreadIndexForSearch = 0;

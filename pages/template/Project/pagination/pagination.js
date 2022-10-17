@@ -106,7 +106,7 @@ let searchList = [];
 
 export async function Pagination() {
     // list_item = await Get("https://localhost:5001/project/",null);
-    list_item = window.db.project;
+    list_item =  window.db.project;
     if(list_item != null)
     {
         // console.log(list_item);

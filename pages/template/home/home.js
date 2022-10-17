@@ -1,4 +1,7 @@
 export function home(){
+    while(window.db == null){
+        // sorry i have to take the help of this loop
+    }
     let resume = window.db.resume;
     let main_content =`
     <h1>Hi, my name is ${resume.basics.name}</h1>
